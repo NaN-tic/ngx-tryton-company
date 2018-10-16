@@ -6,7 +6,6 @@ import { Subject }    from 'rxjs/Subject';
 
 // Models
 import { Company } from './company.model';
-import { environment } from '../../environments/environment';
 
 
 @Injectable()
@@ -20,7 +19,6 @@ export class CompanyService {
   constructor(public trytonProvider: TrytonProvider,
     public trytonService: TrytonService) {
     this.companies = [];
-    trytonService.setServerUrl(environment.url_server);
     this.companyEmitter = new EventEmitter();
   }
 
