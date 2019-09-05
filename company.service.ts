@@ -47,8 +47,7 @@ export class CompanyService {
     json_constructor.addNode(method, domain, this.getCompanyFields());
     let json = json_constructor.createJson();
     this.clear();
-
-    this.trytonProvider.rpc_call('model.res.user.getAvailableCompanies', mainCompanyId).subscribe(
+    this.trytonProvider.rpc_call('model.res.user.getAvailableCompanies', [mainCompanyId]).subscribe(
       data => {
         let res = data;
         for (let x of res) {
